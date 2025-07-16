@@ -310,29 +310,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const adminAppointmentsList = document.getElementById('admin-appointments-list');
 
         const renderAdminDashboard = () => {
+            const appointments = getFromStorage('appointments');
             loginView.classList.add('hidden');
             dashboardView.classList.remove('hidden');
             adminLogoutBtn.classList.remove('hidden');
-            const appointments = getFromStorage('appointments');
-            adminAppointmentsList.innerHTML = '';
+            
+            adminAppointmentsList.innerHTML = ''; // Limpa a lista antes de renderizar
+
             if (appointments.length === 0) {
-                adminAppointmentsList.innerHTML = '<p class="info-box">Nenhum serviço marcado no momento.</p>';
+                // Adiciona a mesma caixa de "sem agendamentos" da tela do cliente
+                adminAppointmentsList.innerHTML = '<div class="info-box"><p>NENHUM SERVIÇO MARCADO NO MOMENTO</p></div>';
                 return;
             }
+
+            // Itera sobre todos os agendamentos e cria um card para cada um
             appointments.forEach((app, index) => {
                 const date = new Date(app.date);
                 const formattedDate = date.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+                
                 let servicesHtml = '';
-                app.services.forEach(s => { servicesHtml += `<div class="service-item">${s.name}</div>`; });
-                const card = document.createElement('div');
-                card.className = 'admin-appointment-card';
-                card.innerHTML = `
-                    <h3>CLIENTE: ${app.user.toUpperCase()}</h3>
-                    ${servicesHtml}
-                    <div class="detail-item highlight">DIA: ${formattedDate}</div>
-                    <div class="detail-item">VALOR: R$ ${app.total.toFixed(2)}</div>
-                    <button class="cancel-btn" data-index="${index}">Cancelar Agendamento</button>`;
-                adminAppointmentsList.appendChild(card);
+                app.services.forEach(s => {
+                    servicesHtml += `<div class="list-item"><span>${s.name}</span></div>`;
+                });
+
+                const appointmentCard = document.createElement('div');
+                appointmentCard.className = 'appointment-card'; // Usa a mesma classe do card do cliente
+                
+                // Monta o card com a mesma estrutura da tela de agendamentos do cliente
+                // Adicionando o nome do cliente no topo
+                appointmentCard.innerHTML = `
+                    <p style="font-weight: bold; text-align: center; margin-bottom: 10px; color: #ccc;">CLIENTE: ${app.user.toUpperCase()}</p>
+                    <div class="item-list-group">
+                        ${servicesHtml}
+                        <div class="list-item highlight"><span>DIA: ${formattedDate}</span></div>
+                        <div class="list-item"><span>VALOR: R$ ${app.total.toFixed(2)}</span></div>
+                    </div>
+                    <button class="cancel-btn" data-index="${index}">Cancelar Agendamento</button>
+                `;
+                adminAppointmentsList.appendChild(appointmentCard);
             });
         };
     
@@ -343,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let appointments = getFromStorage('appointments');
                     appointments.splice(indexToRemove, 1);
                     saveToStorage('appointments', appointments);
-                    renderAdminDashboard();
+                    renderAdminDashboard(); // Re-renderiza o dashboard com a lista atualizada
                 }
             }
         });
@@ -353,18 +368,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const user = document.getElementById('admin-user').value;
             const pass = document.getElementById('admin-pass').value;
             if (user === 'admin' && pass === 'admin123') {
-                 saveToStorage('isAdminLoggedIn', true);
-                 renderAdminDashboard();
-            } else { alert('Credenciais de admin inválidas.'); }
+                saveToStorage('isAdminLoggedIn', true);
+                renderAdminDashboard();
+            } else {
+                alert('Credenciais de admin inválidas.');
+            }
         });
 
         adminLogoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
             localStorage.removeItem('isAdminLoggedIn');
-            window.location.reload();
+            window.location.reload(); // Recarrega a página para voltar ao login
         });
 
-        if (JSON.parse(localStorage.getItem('isAdminLoggedIn')) === true) {
+        // Se o admin já estiver logado, mostra o dashboard direto
+        if (JSON.parse(localStorage.getItem('isAdminLoggedIn') || 'false') === true) {
             renderAdminDashboard();
         }
     }
