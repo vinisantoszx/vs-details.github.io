@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Detail - Estética Automotiva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="IMG/logo.png" alt="Logo VS Detail"></a>
+        <nav class="header-nav">
+            <a href="carrinho.html" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+            
+            <a href="login.html" id="user-profile-link" aria-label="Perfil do usuário"><i class="fas fa-user-circle"></i></a>
+            
+            <a href="#" id="user-logout-btn" class="hidden" aria-label="Sair"><i class="fas fa-sign-out-alt"></i></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Carros</h1>
+        <div class="service-list">
+            
+            <article class="service-card" data-service-name="Lavagem e Limpeza (Carro)" data-service-price="30.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lavagem de carro" class="card-image">
+                    <div class="card-text">
+                        <h2>Lavagem e Limpeza</h2>
+                        <p class="card-description">Essa categoria engloba a limpeza geral e específica do veículo, tanto interna quanto externa.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Lavagem convencional</li>
+                        <li>Lavagem detalhada</li>
+                        <li>Higienização (interna)</li>
+                        <li>Lavagem de motor</li>
+                        <li>Lavagem de chassi</li>
+                    </ul>
+                    <p class="price">Valor: R$ 30,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Estética e Restauração (Carro)" data-service-price="90.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/3807373/pexels-photo-3807373.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Polimento de carro" class="card-image">
+                    <div class="card-text">
+                        <h2>Estética e Restauração de Superfícies</h2>
+                        <p class="card-description">Aqui entram os serviços que visam restaurar o brilho, a cor e a proteção de diversas superfícies do carro.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Polimento técnico</li>
+                        <li>Remoção de chuva ácida</li>
+                        <li>Restauração de plásticos</li>
+                        <li>Polimento de faróis</li>
+                    </ul>
+                    <p class="price">Valor: R$ 90,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Proteção e Vitrificação (Carro)" data-service-price="150.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/9500008/pexels-photo-9500008.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Aplicação de cera no carro" class="card-image">
+                    <div class="card-text">
+                        <h2>Proteção e Vitrificação</h2>
+                        <p class="card-description">Essa categoria é para serviços que aplicam uma camada protetora duradoura em diferentes partes do veículo.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Vitrificação de pintura</li>
+                        <li>Aplicação de selante sintético</li>
+                        <li>Proteção para plásticos</li>
+                        <li>Cristalização de vidros</li>
+                    </ul>
+                    <p class="price">Valor: A partir de R$ 150,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Manutenção Básica (Carro)" data-service-price="50.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/164671/pexels-photo-164671.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Manutenção básica de carro" class="card-image">
+                    <div class="card-text">
+                        <h2>Manutenção Básica</h2>
+                        <p class="card-description">Para os serviços mais rotineiros e essenciais para o funcionamento do veículo.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Troca de óleo</li>
+                        <li>Verificação de fluidos</li>
+                        <li>Calibragem de pneus</li>
+                        <li>Inspeção de luzes</li>
+                    </ul>
+                    <p class="price">Valor: A partir de R$ 50,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+        </div>
+
+        <h1 class="section-title">Motos</h1>
+        <div class="service-list">
+            
+            <article class="service-card" data-service-name="Lavagem e Limpeza (Moto)" data-service-price="25.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lavagem de moto" class="card-image">
+                    <div class="card-text">
+                        <h2>Lavagem e Limpeza</h2>
+                        <p class="card-description">Limpeza detalhada para todos os componentes da sua moto.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul><li>Lavagem completa</li><li>Limpeza de relação</li></ul>
+                    <p class="price">Valor: R$ 25,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Estética e Restauração (Moto)" data-service-price="70.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Polimento de moto" class="card-image">
+                    <div class="card-text">
+                        <h2>Estética e Restauração de Superfícies</h2>
+                        <p class="card-description">Serviços para revitalizar a aparência da sua moto, removendo riscos e restaurando o brilho.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Polimento de pintura</li>
+                        <li>Cromagem</li>
+                        <li>Revitalização de plásticos</li>
+                    </ul>
+                    <p class="price">Valor: R$ 70,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Proteção e Vitrificação (Moto)" data-service-price="120.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/1715193/pexels-photo-1715193.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Proteção de pintura de moto" class="card-image">
+                    <div class="card-text">
+                        <h2>Proteção e Vitrificação</h2>
+                        <p class="card-description">Proteção duradoura contra os elementos, mantendo a pintura e outras partes da sua moto conservadas.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Vitrificação de pintura</li>
+                        <li>Selante para pintura</li>
+                        <li>Proteção de peças plásticas</li>
+                    </ul>
+                    <p class="price">Valor: A partir de R$ 120,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+            <article class="service-card" data-service-name="Manutenção Básica (Moto)" data-service-price="40.00">
+                <div class="card-visible-content">
+                    <img src="https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Manutenção básica de moto" class="card-image">
+                    <div class="card-text">
+                        <h2>Manutenção Básica</h2>
+                        <p class="card-description">Os cuidados essenciais para garantir a segurança e o bom funcionamento da sua moto no dia a dia.</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Contem os serviços:</h3>
+                    <ul>
+                        <li>Troca de óleo e filtro</li>
+                        <li>Verificação de freios</li>
+                        <li>Lubrificação de corrente</li>
+                    </ul>
+                    <p class="price">Valor: A partir de R$ 40,00</p>
+                    <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+                </div>
+                <button class="toggle-button">Saiba Mais</button>
+            </article>
+
+        </div>
+    </main>
+</body>
+
+<script src="script.js"></script>
+
+</html>

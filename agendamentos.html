@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos - V3 Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="IMG/logo.png" alt="Logo VS Detail"></a>
+        <nav class="header-nav">
+            <a href="carrinho.html" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+            
+            <a href="login.html" id="user-profile-link" aria-label="Perfil do usuário"><i class="fas fa-user-circle"></i></a>
+            
+            <a href="#" id="user-logout-btn" class="hidden" aria-label="Sair"><i class="fas fa-sign-out-alt"></i></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Meus agendamentos</h1>
+        <div id="appointments-empty" class="info-box hidden">
+            <p>SEM AGENDAMENTOS</p>
+        </div>
+        <div id="appointments-list" class="item-list">
+            </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

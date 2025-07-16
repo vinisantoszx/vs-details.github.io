@@ -1,0 +1,435 @@
+/* --- Reset Básico e Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Cabeçalho --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 10vh;
+}
+
+.header-nav a {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* --- Título Principal --- */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* --- Cards de Serviço --- */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
+}
+
+.card-visible-content {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.card-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.card-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #f1f1f1;
+}
+
+.card-text .card-description {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* --- Botões --- */
+.toggle-button, .add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #D94A4A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover, .add-to-cart-btn:hover {
+    background-color: #b83b3b;
+}
+
+/* --- Detalhes do Serviço (Ocultos por padrão) --- */
+.card-details {
+    display: none; /* ESCONDIDO POR PADRÃO */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.card-details h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.card-details ul {
+    list-style-position: inside;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.card-details ul li {
+    margin-bottom: 5px;
+}
+
+.card-details .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    margin-top: 0;
+}
+
+/* --- Classe de Controle (adicionada via JavaScript) --- */
+.service-card.expanded .card-description,
+.service-card.expanded .toggle-button {
+    display: none; /* Esconde a descrição e o botão "Saiba Mais" */
+}
+
+.service-card.expanded .card-details {
+    display: block; /* Mostra a seção de detalhes */
+}
+/* Adicione estas regras ao final do seu arquivo style.css existente */
+
+/* --- Estilos Gerais Adicionais --- */
+.hidden {
+    display: none !important;
+}
+
+.section-title {
+    margin-top: 40px;
+}
+
+.main-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #D94A4A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #b83b3b;
+}
+
+.main-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.info-box {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.info-box p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* --- Formulários (Login/Cadastro/Admin) --- */
+.form-container {
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #444;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.form-switch a {
+    color: #D94A4A;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- Listas (Carrinho / Agendamentos) --- */
+.item-list .list-item {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-list .list-item span {
+    font-weight: bold;
+}
+
+.total-box {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- Calendário --- */
+.calendar-container {
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #444;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.calendar-weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 5px;
+}
+
+.calendar-weekdays div {
+    font-weight: bold;
+    color: #888;
+}
+
+.calendar-days .day {
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.calendar-days .day.other-month {
+    color: #555;
+}
+
+.calendar-days .day:not(.other-month):hover {
+    background-color: #444;
+}
+
+.calendar-days .day.selected {
+    background-color: #D94A4A;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Adicione estas regras ao final do seu style.css */
+
+.list-item .item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o preço e o botão */
+}
+
+.remove-item {
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px; /* Centraliza o 'x' verticalmente */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.remove-item:hover {
+    background-color: #D94A4A; /* Fica vermelho ao passar o mouse */
+}
+
+/* --- Dashboard do Admin --- */
+.admin-appointment-card {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.admin-appointment-card h3 {
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.admin-appointment-card .service-item,
+.admin-appointment-card .detail-item {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.admin-appointment-card .detail-item.highlight {
+    background-color: #D94A4A;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Adicione estas regras ao final do seu style.css */
+
+/* Card de agendamento do cliente */
+.appointment-card {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botão de Cancelar */
+.cancel-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #702a2a; /* Vermelho mais escuro e sóbrio */
+    color: #f0f0f0;
+    border: 1px solid #913a3a;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #D94A4A; /* Fica vermelho vivo no hover */
+    border-color: #D94A4A;
+}
+
+/* Ajuste no card do admin para acomodar o botão */
+.admin-appointment-card .detail-item:last-of-type {
+    margin-bottom: 0;
+}

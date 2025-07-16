@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - V3 Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    
+    <header class="main-header">
+        <a href="index.html" class="logo"><img src="IMG/logo.png" alt="Logo VS Detail"></a>
+        <nav class="header-nav">
+            <a href="carrinho.html" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+            
+            <a href="login.html" id="user-profile-link" aria-label="Perfil do usuário"><i class="fas fa-user-circle"></i></a>
+            
+            <a href="#" id="user-logout-btn" class="hidden" aria-label="Sair"><i class="fas fa-sign-out-alt"></i></a>
+        </nav>
+    </header>
+
+    <main class="container" id="cart-page">
+        <div id="cart-view">
+            <h1>Meu carrinho</h1>
+            <div id="cart-empty" class="info-box hidden">
+                <p>SEU CARRINHO ESTÁ VAZIO</p>
+                <a href="index.html" class="main-btn">Retornar para a Home</a>
+            </div>
+            <div id="cart-filled" class="hidden">
+                <div id="cart-items-list" class="item-list">
+                    </div>
+                <div class="total-box">
+                    <p>Valor total: <span id="cart-total">R$ 0,00</span></p>
+                </div>
+                <button id="continue-to-schedule" class="main-btn">Continuar</button>
+            </div>
+        </div>
+
+        <div id="schedule-view" class="hidden">
+            <h1>Confirme sua data</h1>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div>
+                </div>
+                <div class="calendar-days" id="calendar-days">
+                    </div>
+            </div>
+            <button id="confirm-appointment-btn" class="main-btn" disabled>Concluir Agendamento</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
